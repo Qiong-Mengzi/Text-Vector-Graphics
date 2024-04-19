@@ -30,7 +30,7 @@ ERROR: Package 'python-text-vector-graphics' requires a different Python: 3.8.10
 
 + `pytvg-setup/pylatest/setup.py` の 8 行目を削除します。
 
-+ `python pytvg-setup/pylatest/setup.py sdist`を再梱包します。
++ `python pytvg-setup/pylatest/setup.py sdist`を再パッケージ化します。
 
 + **`pytvg-setup/pylatest/setup.py` ファイルを `dist/python-text-vector-graphics-0.0.1.tar.gz` 圧縮ファイルにコピーします。**
 ```bash
@@ -45,9 +45,7 @@ tar -zxvf python-text-vector-graphics-0.0.1.tar.gz
 pip install ./python-text-vector-graphics-0.0.1
 ```
 
-## ソースコードを再梱包する
-
-~~(ソースコードを再パッケージ化する? I don't know which is th correct translation)~~
+## ソースコードをパッケージ化する
 
 > なんらかの理由で、`fast`バージョンが続く場合があります。 (現在のバージョンは`pylatest`です)
 >
