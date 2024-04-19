@@ -1,60 +1,56 @@
 # TVG (Text Vector Graphics)
 
-~~*「この世界は美しいが、それは私のものではない...」*~~ [Chinese](/Sad/ZH/README-ZH.MD) | [Japanese](/Sad/JA/README-JA.MD)
+~~*「この世界は美しいが、それは私のものではない...」*~~ [English](/README.MD) | [Japanese](/Sad/JA/README-JA.MD)
 
-A Vector Graphics format. (Useless)
+一个矢量图格式，虽然但是没有什么用就对了（逃
 
 ~~[TVG API]()(Unwritten)~~
 
 ~~[TVG Format]()(Unwritten)~~
 
-## Install by pip
+## pip安装：
 
 ```bash
 tar -zxvf python-text-vector-graphics-0.0.1.tar.gz
 pip install ./python-text-vector-graphics-0.0.1
 ```
 
-**TVG requires python>=3.9**
+**TVG 需要python3.9及以上的版本**
 
-~~(Or the following error will appear.)
+~~(否则会出现如下报错)~~
 ```
 ERROR: Package 'python-text-vector-graphics' requires a different Python: 3.8.10 not in '>=3.9'
 ```
 
-> However, removing the type annotation seems to be compatible with python 3.8 and below. (to be verified) (see `NOTE #1` at the bottom of the page)
+> 虽然但是，将类型注解去掉似乎可以兼容 python 3.8 及以下的版本(待验证)(见页面底部的`NOTE #1`)
 
-+ Open all py files under `TVG/`.
++ 打开`TVG/`下的所有py文件
 
-+ Remove all type annotations. (a boooooooring job )
++ 将所有的类型注解去掉(一个枯燥的工作ww)
 
-+ Remove the 8th line of `pytvg-setup/pylatest/setup.py`.
++ 去掉`pytvg-setup/pylatest/setup.py`的第8行
 
-+ Repackage.
-```bash
-python pytvg-setup/pylatest/setup.py sdist
-```
++ 重新打包 `python pytvg-setup/pylatest/setup.py sdist`
 
-+ **Copy the `pytvg-setup/pylatest/setup.py` file to `dist/python-text-vector-graphics-0.0.1.tar.gz`**
++ **将`pytvg-setup/pylatest/setup.py`文件复制到`dist/python-text-vector-graphics-0.0.1.tar.gz`**
 ```bash
 tar -zxvf python-text-vector-graphics-0.0.1.tar.gz
 cp -v pytvg-setup/pylatest/setup.py python-text-vector-graphics-0.0.1
 tar -zcvf python-text-vector-graphics-0.0.1.tar.gz python-text-vector-graphics-0.0.1
 ```
-
-+ Finally, install TVG.
++ 然后安装TVG
 ```bash
 tar -zxvf python-text-vector-graphics-0.0.1.tar.gz
 pip install ./python-text-vector-graphics-0.0.1
 ```
 
-## Repackage
+## 打包
 
->For some reason, there may be a `fast` version (the current version is `pylatest`)
->
->Therefore, `setup.py` is placed in different folders
+> 由于一些原因，后续可能会出现`fast`版本(当前版本为`pylatest`)
+> 
+> 故`setup.py`放在了不同的文件夹内
 
-If you need to repackage the source code, use the following commands:
+如果需要对源码重新打包，请使用如下符文：
 ```bash
 # Package
 python pytvg-setup/pylatest/setup.py sdist
@@ -64,9 +60,9 @@ cp -v pytvg-setup/pylatest/setup.py python-text-vector-graphics-0.0.1
 tar -zcvf python-text-vector-graphics-0.0.1.tar.gz python-text-vector-graphics-0.0.1
 ```
 
-## Samples
+## 示例
 
-### Make a TVG file [(sample2.py)](/sample2.py)
+### 生成TVG [(sample2.py)](/sample2.py)
 ```python
 import TVG
 from TVG.pytvg import TVG_OpenA,TVG_Save,TVG_Show
@@ -89,10 +85,9 @@ tvg.append(TVG.line(x1=0.5,y1=0.7,x2=0.7,y2=0.3,color=Blue,lr=0.004))
 with open('TVG-samples/correct.tvg','w') as f:
     f.write(TVG_Save(tvg))
 ```
+如果安装有`numpy`和`cv2`，则可以输出为png图片
 
-If `numpy` and `cv2` are installed, the TVG file can be convert to PNG image.
-
-*The default output color format of TVG is `RGBA` and the data type is `list[list[list[int]]]`.*
+*TVG的默认输出颜色格式为`RGBA`,类型为`list[list[list[int]]]`*
 
 ```python
 # You need cv2 and numpy to save TVG image
@@ -110,9 +105,9 @@ cv2.imwrite('TVG-samples/correct.png',
 )
 ```
 
-> NOTE: The image is drawn in `cloth.arr`.
+> NOTE: 图像绘制在`cloth.arr`中
 
-### Read a TVG file [(sample1.py)](/sample1.py)
+### 读取TVG [(sample1.py)](/sample1.py)
 
 ```python
 import TVG
@@ -128,7 +123,7 @@ cloth = TVG.vEmptyCloth((200,200))
 TVG_Show(tvg,cloth)
 ```
 
-If `numpy` and `cv2` are installed (or other plotting libraries like `matplotlib`. `cv2` is used as an example in here), the picture can be viewed.
+如果安装有`numpy`和`cv2`(或其他绘图库，如`matplotlib`。这里以`cv2`为例)，则可以查看图片
 
 ```python
 # You need cv2 and Numpy to show the TVG image.
@@ -140,28 +135,30 @@ cv2.waitKey()
 cv2.destroyAllWindows()
 ```
 
-The the following picture will be shown.
+然后就可以看到
+
 ![Sample](/Sad/correct.backup.png)
 
-(The default background of TVG format is transparent.)
+(TVG默认背景是透明的)
 
 ## License
 
-The TVG format follows the MIT open source license.
+MIT协议
 
 ## Release
 
-## TVG 0.0.1
+### TVG 0.0.1
 
-Supports [point](/TVG/point.py)，[segment](/TVG/line.py)，[circle](/TVG/circle.py)and[Bézier curves](/TVG/bezier_curve.py)
+支持[点](/TVG/point.py)，[线段](/TVG/line.py)，[圆](/TVG/circle.py)和[贝塞尔曲线](/TVG/bezier_curve.py)
 
 ## NOTE
 
 ### #1
 
-When I showed my teacher a small project ~~[Saiko2]()~~ at school, I found that the computer in the school computer room was pre-installed with python 3.8.
+在学校给我的老师展示一个小的项目
+~~[Saiko2]()~~时发现学校机房的电脑预装的是python3.8
 
-To solve this problem, it took me about 20 minutes to remove all the type annotations in it.
+为了解决这个问题，我花了大约20分钟将里面所有的类型注解全部删除了
 
 (This repository called `Saiko2` is inaccessible for some terrible reason...)
 
@@ -169,6 +166,6 @@ To solve this problem, it took me about 20 minutes to remove all the type annota
 
 ### #2
 
-My English is not very good, and I don't even know Japanese.
+我的英语并不好，并且我甚至不会日语
 
-So... If there are translation errors, please point them out and I'll try to fix them. 
+所以...如果有翻译错误请指出来，我会尝试修正它们的 QwQ

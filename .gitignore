@@ -1,4 +1,4 @@
-*.png
 .vscode/
 test.py
 dist/
+python_text_vector_graphics.egg-info/
