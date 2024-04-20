@@ -4,9 +4,11 @@
 
 一个矢量图格式，虽然但是没有什么用就对了（逃
 
-~~[TVG API]()(Unwritten)~~
+[TVG API](/Sad/ZH/TVG-API.md)
 
-~~[TVG Format]()(Unwritten)~~
+[TVG Format](/Sad/ZH/TVG-Format.md)
+
+[TVG Future](/Sad/ZH/Future.md)
 
 ## pip安装：
 

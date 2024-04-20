@@ -10,7 +10,7 @@ def Linear(x:float):
     return x
 
 def Sigmoid4(x:float):
-    return 1 / (1 + math.exp(4 * (x - 0.5)))
+    return 1 / (1 + math.exp(4 * (0.5 - x)))
 
 def ToColor(color:str):
     if not len(color) in (2+2,6+2,8+2):
